@@ -7,31 +7,29 @@ Created on Tue Jan 25 17:40:59 2022
 import pyautogui
 from time import sleep
 
-bas1 = 0
-bas2 = 0
-bas3 = 0
-bas4 = 0
+bas = {1: 0, 2: 0, 3: 0, 4: 0}
+
+sleep(5)
 
 while True:
-    if bas4 == 9:
-        bas4 = 0
-        if bas3 == 9:
-            bas3 = 0
-            if bas2 == 9:
-                bas2 = 0
-                if bas1 == 9:
+    if bas[4] == 9:
+        bas[4] = 0
+        if bas[3] == 9:
+            bas[3] = 0
+            if bas[2] == 9:
+                bas[2] = 0
+                if bas[1] == 9:
                     break
                 else:
-                    bas1 += 1
+                    bas[1] += 1
             else:
-                bas2 += 1
+                bas[2] += 1
         else:
-            bas3 += 1
+            bas[3] += 1
     else:
-        bas4 += 1
-    pyautogui.typewrite(str(bas1))
-    pyautogui.typewrite(str(bas2))
-    pyautogui.typewrite(str(bas3))
-    pyautogui.typewrite(str(bas4))
-    print(f"{bas1}{bas2}{bas3}{bas4}")
-    sleep(0.05)
+        bas[4] += 1
+    pyautogui.typewrite(str(bas[1]))
+    pyautogui.typewrite(str(bas[2]))
+    pyautogui.typewrite(str(bas[3]))
+    pyautogui.typewrite(str(bas[4]))
+    print(f"{bas[1]}{bas[2]}{bas[3]}{bas[4]}")
